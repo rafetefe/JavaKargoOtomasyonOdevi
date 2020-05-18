@@ -56,12 +56,15 @@ public class Main {
             MusteriAnaMenu anaMenu = new MusteriAnaMenu();
             anaMenu.setVisible(true);
         }
+    login.setVisible(false);
     }
-  
+
+    static LoginFrame login = new LoginFrame();
+    
     public static void main(String[] args) {
         //Açılacak ekranlar ve işleyiş
-        LoginFrame login = new LoginFrame();
         login.setVisible(true);
+
     }
     
 }

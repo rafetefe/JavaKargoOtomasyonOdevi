@@ -41,9 +41,19 @@ public class MusteriAnaMenu extends javax.swing.JFrame {
         });
 
         paketlerimButton.setText("Paketlerim");
+        paketlerimButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paketlerimButtonActionPerformed(evt);
+            }
+        });
 
         cikisButton.setText("Çıkış");
         cikisButton.setToolTipText("");
+        cikisButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cikisButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,6 +85,18 @@ public class MusteriAnaMenu extends javax.swing.JFrame {
     private void profilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_profilButtonActionPerformed
+
+    private void paketlerimButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paketlerimButtonActionPerformed
+        // TODO add your handling code here:
+        PaketlerFrame paketlerFrame = new PaketlerFrame();
+        paketlerFrame.setVisible(true);
+    }//GEN-LAST:event_paketlerimButtonActionPerformed
+
+    private void cikisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cikisButtonActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        Main.login.setVisible(true);
+    }//GEN-LAST:event_cikisButtonActionPerformed
 
     /**
      * @param args the command line arguments

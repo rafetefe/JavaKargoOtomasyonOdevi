@@ -97,6 +97,8 @@ public class YoneticiAnaMenu extends javax.swing.JFrame {
 
     private void cikisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cikisButtonActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        Main.login.setVisible(true);
     }//GEN-LAST:event_cikisButtonActionPerformed
 
     /**
