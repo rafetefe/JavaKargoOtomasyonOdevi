@@ -20,14 +20,10 @@ public class LoginFrame extends javax.swing.JFrame {
     
     public boolean enterValidate(){
         //şifre username kombinasyonu doğrumu kontrol etsin, true false dönsün
-        
-        
-        String entries[] = new String[2];
-        entries[0] = new String(passwordLogin.getPassword());
-        entries[1] = usernameLogin.getText();
-
-        //Varları mainden çek, işlemleri burda yap
-        return false;
+        String username = usernameLogin.getText();
+        String password = new String(passwordLogin.getPassword());
+        //satir bul
+        return false;//şimdilik
     }
 
     /**

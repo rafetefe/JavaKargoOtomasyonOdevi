@@ -1,3 +1,3 @@
-1 admin	123123 1
+1 admin 123123 1
 2 musteri0 123 0
 3 musteri1 2121 0
