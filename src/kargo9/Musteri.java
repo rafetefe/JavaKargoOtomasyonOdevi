@@ -9,6 +9,6 @@ package kargo9;
  *
  * @author ahmtb
  */
-public class Musteri {
+public class Musteri extends Kullanici{
     
 }
