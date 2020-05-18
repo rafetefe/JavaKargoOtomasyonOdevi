@@ -2,6 +2,7 @@
 package kargo9;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -34,9 +35,16 @@ public class Main {
         try{
         File kulFile = new File("./kullanicilar.txt");
         Scanner kulScan = new Scanner(kulFile);
-        }catch(Exception e){
+        while(kulScan.hasNext()){
+            String satir = kulScan.nextLine();
+        }
+        
+        
+        }catch(FileNotFoundException e){
             System.out.println("Dosya bulunamadı");
         }
     }
+    
+    
     
 }
