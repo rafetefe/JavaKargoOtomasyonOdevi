@@ -88,8 +88,9 @@ public class MusteriAnaMenu extends javax.swing.JFrame {
 
     private void paketlerimButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paketlerimButtonActionPerformed
         // TODO add your handling code here:
-        PaketlerFrame paketlerFrame = new PaketlerFrame();
-        paketlerFrame.setVisible(true);
+        MusteriPaketleri musPaketleriFrame = new MusteriPaketleri();
+        musPaketleriFrame.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_paketlerimButtonActionPerformed
 
     private void cikisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cikisButtonActionPerformed
