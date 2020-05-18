@@ -42,6 +42,11 @@ public class YoneticiAnaMenu extends javax.swing.JFrame {
         });
 
         paketlerButton.setText("Paketler");
+        paketlerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paketlerButtonActionPerformed(evt);
+            }
+        });
 
         kullanicilarButton.setText("Kullanicilar");
         kullanicilarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +105,10 @@ public class YoneticiAnaMenu extends javax.swing.JFrame {
         setVisible(false);
         Main.login.setVisible(true);
     }//GEN-LAST:event_cikisButtonActionPerformed
+
+    private void paketlerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paketlerButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paketlerButtonActionPerformed
 
     /**
      * @param args the command line arguments

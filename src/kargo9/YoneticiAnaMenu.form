@@ -64,6 +64,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Paketler"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="paketlerButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="kullanicilarButton">
       <Properties>
