@@ -18,12 +18,21 @@ public class LoginFrame extends javax.swing.JFrame {
         initComponents();
     }
     
-    public boolean enterValidate(){
+    public int[] enterValidate(){
         //şifre username kombinasyonu doğrumu kontrol etsin, true false dönsün
         String username = usernameLogin.getText();
         String password = new String(passwordLogin.getPassword());
-        //satir bul
-        return false;//şimdilik
+        //Verilen usernamein olduğu satırı çeker
+        String[] query = Main.findSatir(Main.getKullanicilar(), 1, username).get(0);
+        //kullanıcının şifresiyle, yazılan şifreyi karşılaştırır.
+        if(query[2].equals(password)){
+            int[] tmp = {1, Integer.parseInt(query[3])};
+            return tmp;
+        }
+        else{
+            int[] tmp = {0,0};
+            return tmp;
+        }
     }
 
     /**
@@ -67,11 +76,10 @@ public class LoginFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
-        //enterButton
-        boolean sifredogrumu = enterValidate();
-        if (sifredogrumu){
-            //main.anaMenuAc()
+        int[] tmp = enterValidate();
+        if (tmp[0] == 1){
             infoLogin.setText("Giriş Başarılı");
+            Main.anaMenuAc(tmp[1]);
         }else{
             infoLogin.setText("Hatalı şifre/kullanıcı adı");
         }

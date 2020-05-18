@@ -32,37 +32,36 @@ public class Main {
             ArrayList<String> Liste, int konum, String aranıcak){
         /*
         Konumlar={0 : ID,   1 : username,   2 : pass,   3 : yetki}
-        */
-        
+        */       
+        //Dönen veri: findSatir().get(bulunan satir sayisi)[0-4];
         ArrayList<String[]> sonuclar = new ArrayList<String[]>();
-        
         
         for (int i = 0; i < Liste.size(); i++) {
             String[] satir = Liste.get(i).split(" ");
             if (satir[konum].contains(aranıcak)){
-                //burda return, bulduğu ilk satırı döndürüyo,
-                //aranacak tutarlaştırılırsa kolaylaşır.
                 sonuclar.add(satir);
             }
         }
         return sonuclar;
         //
     }
+    
+    public static void anaMenuAc(int x){
+        if(x == 1){
+            //yönetici için main menu
+            YoneticiAnaMenu anaMenu = new YoneticiAnaMenu();
+            anaMenu.setVisible(true);
+        }else{
+            //musteri için main menu
+            MusteriAnaMenu anaMenu = new MusteriAnaMenu();
+            anaMenu.setVisible(true);
+        }
+    }
   
     public static void main(String[] args) {
-        
-        //abomination
-        ArrayList<String[]> istek = findSatir(getKullanicilar(), 2, "123"); 
-        for (int i = 0; i < istek.size()  ; i++) {
-            for (int j = 0; j < 4; j++) {
-                System.out.print(istek.get(i)[j]);
-                
-            }
-            System.out.println("");
-        }
         //Açılacak ekranlar ve işleyiş
-        //LoginFrame login = new LoginFrame();
-        //login.setVisible(true);
+        LoginFrame login = new LoginFrame();
+        login.setVisible(true);
     }
     
 }
