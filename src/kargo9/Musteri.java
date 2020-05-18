@@ -9,6 +9,9 @@ package kargo9;
  *
  * @author ahmtb
  */
-public class Musteri extends Kullanici{
-    
+public class Musteri extends Kullanici {
+
+    public Musteri(int id, String kullaniciadi, String sifre, int yetki) {
+        super(id, kullaniciadi, sifre, yetki);
+    }
 }

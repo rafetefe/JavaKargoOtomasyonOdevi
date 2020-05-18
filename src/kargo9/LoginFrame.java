@@ -55,13 +55,13 @@ public class LoginFrame extends javax.swing.JFrame {
 
         jLabel2.setText("Login");
         jLabel2.setToolTipText("");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         usernameLogin.setText("Kullanici Adı");
-        getContentPane().add(usernameLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 90, -1));
+        getContentPane().add(usernameLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 110, -1));
 
         passwordLogin.setText("Password");
-        getContentPane().add(passwordLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        getContentPane().add(passwordLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 90, -1));
 
         enterButton.setText("Giriş");
         enterButton.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +69,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 enterButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(enterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        getContentPane().add(enterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 70, -1));
         getContentPane().add(infoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 20));
 
         pack();

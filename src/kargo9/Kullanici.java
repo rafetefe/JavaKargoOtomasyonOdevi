@@ -11,7 +11,9 @@ public class Kullanici {
     String kullaniciadi;
     String sifre;
     int yetki;
-    
+    public Kullanici(int id, String kullaniciadi, String sifre, int yetki){
+        
+    }
     public int getId() {
         return id;
     }

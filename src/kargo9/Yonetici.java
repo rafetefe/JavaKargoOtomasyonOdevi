@@ -10,5 +10,9 @@ package kargo9;
  * @author ahmtb
  */
 public class Yonetici extends Kullanici {
-    
+
+    public Yonetici(int id, String kullaniciadi, String sifre, int yetki) {
+        super(id, kullaniciadi, sifre, yetki);
+    }
+
 }
