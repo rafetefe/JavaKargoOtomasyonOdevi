@@ -23,16 +23,20 @@ public class LoginFrame extends javax.swing.JFrame {
         String username = usernameLogin.getText();
         String password = new String(passwordLogin.getPassword());
         //Verilen usernamein olduğu satırı çeker
-        String[] query = Main.findSatir(Main.getKullanicilar(), 1, username).get(0);
+       
         //kullanıcının şifresiyle, yazılan şifreyi karşılaştırır.
-        if(query[2].equals(password)){
-            int[] tmp = {1, Integer.parseInt(query[3])};
-            return tmp;
+        try{
+            String[] query = Main.findSatir(
+                Main.getKullanicilar(), 1, username).get(0);
+                if(query[2].equals(password)){
+                    int[] tmp = {1, Integer.parseInt(query[3])};
+                    return tmp;
+                }
+        }catch(Exception e){
+           
         }
-        else{
-            int[] tmp = {0,0};
-            return tmp;
-        }
+        int[] tmp = {0,0};
+        return tmp;
     }
 
     /**
@@ -53,9 +57,10 @@ public class LoginFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Login");
         jLabel2.setToolTipText("");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 50, -1));
 
         usernameLogin.setText("Kullanici Adı");
         getContentPane().add(usernameLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 110, -1));
