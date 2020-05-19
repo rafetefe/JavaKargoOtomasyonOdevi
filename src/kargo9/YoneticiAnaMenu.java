@@ -108,6 +108,9 @@ public class YoneticiAnaMenu extends javax.swing.JFrame {
 
     private void paketlerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paketlerButtonActionPerformed
         // TODO add your handling code here:
+        PaketlerFrame paketlerFrame = new PaketlerFrame();
+        setVisible(false);
+        paketlerFrame.setVisible(true);
     }//GEN-LAST:event_paketlerButtonActionPerformed
 
     /**

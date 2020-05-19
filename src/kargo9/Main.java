@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static ArrayList<String> getKullanicilar() {
-        //Kullanci.txt'yi ArrayList<String> olarak döndürür
+        //kullanciliar.txt'yi ArrayList<String> olarak döndürür
         ArrayList<String> kullaniciList = new ArrayList<String>();
         try {
             File kulFile = new File("src/kargo9/kullanicilar.txt");
@@ -26,6 +26,23 @@ public class Main {
             System.out.println("Dosya bulunamadı");
         }
         return kullaniciList;
+    }
+    
+    public static ArrayList<String> getPaketler(){
+        //paketler.txt'yi ArrayList<String> olarak döndürür
+        //Dönen veri: findSatir().get(bulunan satir sayisi)[0-6];
+        ArrayList<String> paketList = new ArrayList<String>();
+        try {
+            File pakFile = new File("src/kargo9/paketler.txt");
+            Scanner pakScan = new Scanner(pakFile);
+            while (pakScan.hasNext()) {
+                paketList.add(pakScan.nextLine());
+            }
+            pakScan.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Dosya bulunamadı");
+        }
+        return paketList;        
     }
 
     public static ArrayList<String[]> findSatir(
@@ -60,11 +77,12 @@ public class Main {
     }
 
     static LoginFrame login = new LoginFrame();
+    static int yetki;
 
     public static void main(String[] args) {
         //Açılacak ekranlar ve işleyiş
         login.setVisible(true);
-
+     
     }
 
 }

@@ -84,7 +84,8 @@ public class LoginFrame extends javax.swing.JFrame {
         int[] tmp = enterValidate();
         if (tmp[0] == 1){
             infoLogin.setText("Giriş Başarılı");
-            Main.anaMenuAc(tmp[1]);
+            Main.yetki = tmp[1];
+            Main.anaMenuAc(Main.yetki);
         }else{
             infoLogin.setText("Hatalı şifre/kullanıcı adı");
         }
