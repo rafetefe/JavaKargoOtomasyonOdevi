@@ -14,5 +14,13 @@ public class Yonetici extends Kullanici {
     public Yonetici(int id, String kullaniciadi, String sifre, int yetki) {
         super(id, kullaniciadi, sifre, yetki);
     }
-
+    public void kargoEkle() {
+        
+    }
+    public void kargoCikar() {
+        
+    }
+    public void kargoDuzenle() {
+        
+    }
 }
