@@ -14,5 +14,7 @@ public class Paket {
     Kargo ID,   Yollayan ID,    Alıcı ID,   Adres,  Fiyat
     Int,        Int,            Int,        String, Int
     */
-    
+    public Paket(int id, int gönderenid, int alacakid, String adres){
+        
+    }
 }
