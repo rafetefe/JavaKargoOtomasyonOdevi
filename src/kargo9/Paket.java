@@ -19,7 +19,11 @@ public class Paket {
     int alacakid;
     String adres;
     int fiyat;
-    public Paket(int id, int gönderenid, int alacakid, String adres){
+    double uzunluk;
+    double genislik;
+    double yukseklik;
+    
+    public Paket(int id, int gönderenid, int alacakid, String adres,double uzunluk,double genislik,double yukseklik){
         
     }
     public int getKargoid() {
@@ -59,6 +63,6 @@ public class Paket {
     }
 
     public void setFiyat(int fiyat) {
-        this.fiyat = fiyat;
+        this.fiyat = (int) ((uzunluk + genislik + yukseklik)/10) ;
     }
 }
