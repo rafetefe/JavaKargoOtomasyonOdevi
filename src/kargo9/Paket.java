@@ -10,22 +10,27 @@ package kargo9;
  * @author op
  */
 public class Paket {
+
     /*
     Kargo ID,   Yollayan ID,    Alıcı ID,   Adres,  Fiyat
     Int,        Int,            Int,        String, Int
-    */
+     */
     int kargoid;
-    int gönderenid;
+    int gonderenid;
     int alacakid;
-    String adres;
+    String gonderenadres;
+    String alacakadres;
     int fiyat;
     double uzunluk;
     double genislik;
     double yukseklik;
-    
-    public Paket(int id, int gönderenid, int alacakid, String adres,double uzunluk,double genislik,double yukseklik){
-        
+
+    public Paket(int id, int gönderenid, int alacakid,
+            String gonderenadres, String alacakadres,
+            double uzunluk, double genislik, double yukseklik) {
+
     }
+
     public int getKargoid() {
         return kargoid;
     }
@@ -35,11 +40,11 @@ public class Paket {
     }
 
     public int getGönderenid() {
-        return gönderenid;
+        return gonderenid;
     }
 
     public void setGönderenid(int gönderenid) {
-        this.gönderenid = gönderenid;
+        this.gonderenid = gönderenid;
     }
 
     public int getAlacakid() {
@@ -50,19 +55,35 @@ public class Paket {
         this.alacakid = alacakid;
     }
 
-    public String getAdres() {
-        return adres;
-    }
-
-    public void setAdres(String adres) {
-        this.adres = adres;
-    }
-
     public int getFiyat() {
         return fiyat;
     }
 
     public void setFiyat(int fiyat) {
-        this.fiyat = (int) ((uzunluk + genislik + yukseklik)/10) ;
+        this.fiyat = (int) ((uzunluk * genislik * yukseklik) / 1000);
+    }
+
+    public int getGonderenid() {
+        return gonderenid;
+    }
+
+    public void setGonderenid(int gonderenid) {
+        this.gonderenid = gonderenid;
+    }
+
+    public String getGonderenadres() {
+        return gonderenadres;
+    }
+
+    public void setGonderenadres(String gonderenadres) {
+        this.gonderenadres = gonderenadres;
+    }
+
+    public String getAlacakadres() {
+        return alacakadres;
+    }
+
+    public void setAlacakadres(String alacakadres) {
+        this.alacakadres = alacakadres;
     }
 }

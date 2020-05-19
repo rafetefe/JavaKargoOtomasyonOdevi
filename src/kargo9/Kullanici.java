@@ -1,19 +1,23 @@
 package kargo9;
+
 /**
  *
  * @author op
  */
 public class Kullanici {
+
     /*
         ID,kullanıcıadı,şifre,yetki
-    */
+     */
     int id;
     String kullaniciadi;
     String sifre;
     int yetki;
-    public Kullanici(int id, String kullaniciadi, String sifre, int yetki){
-        
+
+    public Kullanici(int id, String kullaniciadi, String sifre, int yetki) {
+
     }
+
     public int getId() {
         return id;
     }

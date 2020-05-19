@@ -15,12 +15,14 @@ public class Yonetici extends Kullanici {
         super(id, kullaniciadi, sifre, yetki);
     }
     public void kargoEkle() {
-        
+
     }
+
     public void kargoCikar() {
-        
+
     }
+
     public void kargoDuzenle() {
-        
+
     }
 }
