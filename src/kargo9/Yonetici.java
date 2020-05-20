@@ -25,4 +25,15 @@ public class Yonetici extends Kullanici {
     public void kargoDuzenle() {
 
     }
+    public void kullaniciEkle() {
+        
+    }
+
+    public void kullaniciCikar() {
+
+    }
+
+    public void kullaniciDuzenle() {
+
+    }
 }
