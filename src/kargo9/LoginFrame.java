@@ -78,6 +78,7 @@ public class LoginFrame extends javax.swing.JFrame {
         getContentPane().add(infoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 20));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
