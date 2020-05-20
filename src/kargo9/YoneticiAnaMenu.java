@@ -48,7 +48,7 @@ public class YoneticiAnaMenu extends javax.swing.JFrame {
             }
         });
 
-        kullanicilarButton.setText("Kullanicilar");
+        kullanicilarButton.setText("Kullanıcılar");
         kullanicilarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kullanicilarButtonActionPerformed(evt);

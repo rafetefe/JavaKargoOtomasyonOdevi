@@ -185,7 +185,7 @@ public class ProfilFrame extends javax.swing.JFrame {
     private void cikisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cikisButtonActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        
+
     }//GEN-LAST:event_cikisButtonActionPerformed
 
     private void sifreGuncelleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sifreGuncelleButtonActionPerformed

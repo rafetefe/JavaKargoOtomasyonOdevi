@@ -106,7 +106,7 @@ public class PaketlerFrame extends javax.swing.JFrame {
         Main.anaMenuAc(Main.yetki);
     }//GEN-LAST:event_cikisButtonActionPerformed
 
-    /** 
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {

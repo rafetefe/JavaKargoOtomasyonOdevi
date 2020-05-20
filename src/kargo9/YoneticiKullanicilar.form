@@ -78,7 +78,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="guncelleButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="G&#xfc;ncele"/>
+        <Property name="text" type="java.lang.String" value="G&#xfc;ncelle"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="cikisButton">

@@ -1,1 +1,2 @@
-1 2 1 Manisa Erzurum 100
+1 2 1 Manisa Erzurum 100 30 45
+2 3 5 Kahramanmaraş Manisa 100 50 30 

@@ -41,7 +41,7 @@ public class YoneticiKullanicilar extends javax.swing.JFrame {
 
         silButton.setText("Sil");
 
-        guncelleButton.setText("Güncele");
+        guncelleButton.setText("Güncelle");
 
         cikisButton.setText("Çıkış");
         cikisButton.addActionListener(new java.awt.event.ActionListener() {
