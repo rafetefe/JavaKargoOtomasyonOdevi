@@ -29,7 +29,7 @@ public class MusteriPaketleri extends javax.swing.JFrame {
 
         cikisButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        paketlerimList = new javax.swing.JList<>();
+        paketlerimList = new javax.swing.JList<>(Aletler.getirTumPaketler(Main.id));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,11 +40,6 @@ public class MusteriPaketleri extends javax.swing.JFrame {
             }
         });
 
-        paketlerimList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(paketlerimList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -77,7 +72,7 @@ public class MusteriPaketleri extends javax.swing.JFrame {
     private void cikisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cikisButtonActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        Main.anaMenuAc(Main.yetki);
+        Aletler.anaMenuAc(Main.yetki);
     }//GEN-LAST:event_cikisButtonActionPerformed
 
     /**

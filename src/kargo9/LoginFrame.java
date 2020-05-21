@@ -18,26 +18,7 @@ public class LoginFrame extends javax.swing.JFrame {
         initComponents();
     }
 
-    public int[] enterValidate() {
-        //şifre username kombinasyonu doğrumu kontrol etsin, true false dönsün
-        String username = usernameLogin.getText();
-        String password = new String(passwordLogin.getPassword());
-        //Verilen usernamein olduğu satırı çeker
 
-        //kullanıcının şifresiyle, yazılan şifreyi karşılaştırır.
-        try {
-            String[] query = Main.findSatir(
-                    Main.getKullanicilar(), 1, username).get(0);
-            if (query[2].equals(password)) {
-                int[] tmp = {1, Integer.parseInt(query[3])};
-                return tmp;
-            }
-        } catch (Exception e) {
-
-        }
-        int[] tmp = {0, 0};
-        return tmp;
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -84,11 +65,15 @@ public class LoginFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
-        int[] tmp = enterValidate();
+        String username = usernameLogin.getText();
+        String password = new String(passwordLogin.getPassword());
+        int[] tmp = Aletler.enterValidate(username, password);
         if (tmp[0] == 1) {
             infoLogin.setText("Giriş Başarılı");
+            //Session bilgileri kayıt
             Main.yetki = tmp[1];
-            Main.anaMenuAc(Main.yetki);
+            Main.id = tmp[2];
+            Aletler.anaMenuAc(Main.yetki);
         } else {
             infoLogin.setText("Hatalı şifre/kullanıcı adı");
         }
