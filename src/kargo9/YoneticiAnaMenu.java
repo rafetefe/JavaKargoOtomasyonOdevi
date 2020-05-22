@@ -99,6 +99,9 @@ public class YoneticiAnaMenu extends javax.swing.JFrame {
 
     private void kullanicilarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kullanicilarButtonActionPerformed
         // TODO add your handling code here:
+        YoneticiKullanicilar yoneticiKul = new YoneticiKullanicilar();
+        yoneticiKul.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_kullanicilarButtonActionPerformed
 
     private void cikisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cikisButtonActionPerformed

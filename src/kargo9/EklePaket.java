@@ -5,7 +5,10 @@
  */
 package kargo9;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -41,6 +44,7 @@ public class EklePaket extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         hataLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        cikisButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,29 +84,28 @@ public class EklePaket extends javax.swing.JFrame {
             }
         });
 
+        cikisButton.setText("Çıkış");
+        cikisButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cikisButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(fiyatLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(gSehirText)
-                            .addComponent(gAdText)
-                            .addComponent(boyText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hataLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(genislikText)
-                            .addComponent(ekleButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(gSehirText)
+                    .addComponent(gAdText)
+                    .addComponent(boyText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hataLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(genislikText))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -110,6 +113,18 @@ public class EklePaket extends javax.swing.JFrame {
                         .addComponent(aSehirText))
                     .addComponent(agirlikText, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(fiyatLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(141, 141, 141))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ekleButton)
+                .addGap(17, 17, 17)
+                .addComponent(cikisButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(140, 140, 140))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +141,7 @@ public class EklePaket extends javax.swing.JFrame {
                     .addComponent(aSehirText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(hataLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boyText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(genislikText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -135,9 +150,11 @@ public class EklePaket extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(fiyatLabel))
-                .addGap(35, 35, 35)
-                .addComponent(ekleButton)
-                .addGap(15, 15, 15))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cikisButton)
+                    .addComponent(ekleButton))
+                .addContainerGap())
         );
 
         pack();
@@ -149,15 +166,19 @@ public class EklePaket extends javax.swing.JFrame {
 
     private void ekleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ekleButtonActionPerformed
         // Form bilgileri:
+        hataLabel.setText("");
         String gUsername = gAdText.getText();
         String gSehir = gSehirText.getText();
         String aUsername = aAdText.getText();
         String aSehir = aSehirText.getText();
         //Boyutlar
+        int boy = 0;
+        int genislik = 0;
+        int agirlik = 0;
         try{
-            int boy = Integer.parseInt(boyText.getText());
-            int genislik = Integer.parseInt(genislikText.getText());
-            int agirlik = Integer.parseInt(agirlikText.getText());
+            boy = Integer.parseInt(boyText.getText());
+            genislik = Integer.parseInt(genislikText.getText());
+            agirlik = Integer.parseInt(agirlikText.getText());
         }catch(Exception e){
             hataLabel.setText("Boy,genislik ve agirlik sadece sayı olmalı.");
         }
@@ -167,13 +188,24 @@ public class EklePaket extends javax.swing.JFrame {
         ArrayList<String[]> aIDQ = null;
         gIDQ = Aletler.findSatir(Aletler.getKullanicilar(), 1, gUsername);
         aIDQ = Aletler.findSatir(Aletler.getKullanicilar(), 1, aUsername);
-        if (gIDQ.isEmpty()){
+        if (gIDQ.isEmpty() || !gIDQ.get(0)[1].equals(gUsername)){
             hataLabel.setText("Gönderen kullanıcı bulunamadı");
-        }else if(aIDQ.isEmpty()){
+        }else if(aIDQ.isEmpty() || !aIDQ.get(0)[1].equals(aUsername)){
             hataLabel.setText("Gönderen alıcı bulunamadı");
         }else{
-            //Girdiler doğru
+            try {
+                //Girdiler doğru
                 //Paket Ekle
+                //Şimdilik Satır ekleme olsun
+                Aletler.ekleSatirPaketler(
+                        paketID + " " + aIDQ.get(0)[0] + " " + aIDQ.get(0)[0] +
+                        " " + aSehir + " " + gSehir + " " + boy + " " + genislik
+                        + " " + agirlik
+                );
+                hataLabel.setText("Paket eklendi");
+            } catch (IOException ex) {
+                hataLabel.setText("Veritabanı hata");
+            }
         }
   
         
@@ -181,11 +213,24 @@ public class EklePaket extends javax.swing.JFrame {
     }//GEN-LAST:event_ekleButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int boy = Integer.parseInt(boyText.getText());
-        int genislik = Integer.parseInt(genislikText.getText());
-        int agirlik = Integer.parseInt(agirlikText.getText());
+        hataLabel.setText("");
+        int boy = 0;
+        int genislik = 0;
+        int agirlik= 0;
+        try{
+            boy = Integer.parseInt(boyText.getText());
+            genislik = Integer.parseInt(genislikText.getText());
+            agirlik = Integer.parseInt(agirlikText.getText());
+        }catch(Exception e){
+            hataLabel.setText("Boy,genislik ve agirlik sadece sayı olmalı.");
+        }
         fiyatLabel.setText((((boy * genislik * agirlik) / 1000) + 1) + " TL");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cikisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cikisButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_cikisButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,6 +273,7 @@ public class EklePaket extends javax.swing.JFrame {
     private javax.swing.JTextField aSehirText;
     private javax.swing.JTextField agirlikText;
     private javax.swing.JTextField boyText;
+    private javax.swing.JButton cikisButton;
     private javax.swing.JButton ekleButton;
     private javax.swing.JLabel fiyatLabel;
     private javax.swing.JTextField gAdText;

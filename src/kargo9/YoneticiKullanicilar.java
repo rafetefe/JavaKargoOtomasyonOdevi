@@ -5,6 +5,11 @@
  */
 package kargo9;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author op
@@ -32,14 +37,24 @@ public class YoneticiKullanicilar extends javax.swing.JFrame {
         guncelleButton = new javax.swing.JButton();
         cikisButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        kullanicilarList = new javax.swing.JList<>();
+        kullanicilarList = new javax.swing.JList<>(Aletler.getirTumKullanicilar());
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         ekleButton.setText("Ekle");
+        ekleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ekleButtonActionPerformed(evt);
+            }
+        });
 
         silButton.setText("Sil");
+        silButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                silButtonActionPerformed(evt);
+            }
+        });
 
         guncelleButton.setText("Güncelle");
 
@@ -50,11 +65,6 @@ public class YoneticiKullanicilar extends javax.swing.JFrame {
             }
         });
 
-        kullanicilarList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(kullanicilarList);
 
         jLabel1.setText("Kullanıcılar");
@@ -103,7 +113,27 @@ public class YoneticiKullanicilar extends javax.swing.JFrame {
 
     private void cikisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cikisButtonActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        Aletler.anaMenuAc(Main.yetki);
     }//GEN-LAST:event_cikisButtonActionPerformed
+
+    private void ekleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ekleButtonActionPerformed
+        // TODO add your handling code here:
+        EkleKullanici ekleKullanici = new EkleKullanici();
+        ekleKullanici.setVisible(true);
+    }//GEN-LAST:event_ekleButtonActionPerformed
+
+    private void silButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_silButtonActionPerformed
+        List<String> secilenler = kullanicilarList.getSelectedValuesList();
+        for (int i = 0; i < secilenler.size(); i++) {
+            String cumle = secilenler.get(i);
+            try {
+                Aletler.satirSil("kullanici", cumle);
+            } catch (IOException ex) {
+                Logger.getLogger(PaketlerFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_silButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,3 +1,4 @@
 1 2 1 Manisa Erzurum 100 30 45
 2 3 5 Kahramanmaraş Manisa 100 50 40
 3 1 2 Erzurum Manisa 50 40 45
+4 1 1 Alıcı Şehir Gönderici Şehir 1 4 5

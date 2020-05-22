@@ -5,6 +5,11 @@
  */
 package kargo9;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author op
@@ -46,6 +51,11 @@ public class PaketlerFrame extends javax.swing.JFrame {
         });
 
         silButton.setText("Sil");
+        silButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                silButtonActionPerformed(evt);
+            }
+        });
 
         cikisButton.setText("Çıkış");
         cikisButton.addActionListener(new java.awt.event.ActionListener() {
@@ -54,6 +64,7 @@ public class PaketlerFrame extends javax.swing.JFrame {
             }
         });
 
+        paketlerList.setToolTipText("");
         jScrollPane1.setViewportView(paketlerList);
 
         jLabel1.setText("Paketler");
@@ -120,6 +131,18 @@ public class PaketlerFrame extends javax.swing.JFrame {
         //this.'de çalışmadı paketlerFrame'i unfocusable yapamadım
         setFocusable(false);
     }//GEN-LAST:event_ekleButtonActionPerformed
+
+    private void silButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_silButtonActionPerformed
+        List<String> secilenler = paketlerList.getSelectedValuesList();
+        for (int i = 0; i < secilenler.size(); i++) {
+            String cumle = secilenler.get(i);
+            try {
+                Aletler.satirSil("paket", cumle);
+            } catch (IOException ex) {
+                Logger.getLogger(PaketlerFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_silButtonActionPerformed
 
     /**
      * @param args the command line arguments

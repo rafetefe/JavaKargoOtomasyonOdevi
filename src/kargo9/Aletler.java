@@ -1,8 +1,10 @@
 package kargo9;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -40,9 +42,9 @@ public class Aletler {
         //kullanıcının şifresiyle, yazılan şifreyi karşılaştırır.
         try {
             //Sorgu
-            String[] query = Aletler.findSatir(
-                    Aletler.getKullanicilar(), 1, username).get(0);
-            if (query[2].equals(password)) {//Doğru Şifre
+            String[] query = findSatir(getKullanicilar(), 1, username).get(0);
+            if (query[2].equals(password) && query[1].equals(username)) {
+                //Doğru Şifre
                 //return true, yetki, id (session bilgileri)
                 int[] tmp = {1, Integer.parseInt(query[3]), Integer.parseInt(query[0])};
                 return tmp;
@@ -84,10 +86,10 @@ public class Aletler {
         ArrayList<String[]> src = null;
         
         //Keyword parametre
-        if(veritabani_adi == "kullanici"){
-            src = findSatir(getPaketler(), 0, "");
-        }else if(veritabani_adi == "paket"){
+        if("kullanici".equals(veritabani_adi)){
             src = findSatir(getKullanicilar(), 0, "");
+        }else if("paket".equals(veritabani_adi)){
+            src = findSatir(getPaketler(), 0, "");
         }
         
         //tüm paketler kadar dönücek
@@ -100,6 +102,44 @@ public class Aletler {
         
         return max;
     }
+    
+    //Satir Silme
+    //Çalışıyo ama temp file yaratmıyor, sildikten sonra liste güncellenmiyor
+    public static void satirSil(String veritabani_adi, String satir) throws FileNotFoundException, IOException{
+        
+        File kulFile = new File("src/kargo9/kullanicilar.txt");
+        File pakFile = new File("src/kargo9/paketler.txt");
+        //Oluştur
+        File tempFile = new File("src/kargo9/tmp.txt");
+
+        BufferedReader reader = null;
+        if(veritabani_adi.equals("kullanici")){
+            reader = new BufferedReader(new FileReader(kulFile));
+        }else if(veritabani_adi.equals("paket")){
+            reader = new BufferedReader(new FileReader(pakFile));
+        }
+        new BufferedReader(new FileReader(tempFile));
+        
+        BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+
+        String lineToRemove = satir;
+        String currentLine;
+
+        while((currentLine = reader.readLine()) != null) {
+            String trimmedLine = currentLine.trim();
+            if(trimmedLine.equals(lineToRemove)) continue;
+            writer.write(currentLine + System.getProperty("line.separator"));
+        }
+        writer.close(); 
+        reader.close(); 
+        if(veritabani_adi.equals("kullanici")){
+            boolean successful = tempFile.renameTo(kulFile);
+        }else if(veritabani_adi.equals("paket")){
+            boolean successful = tempFile.renameTo(pakFile);
+        }
+        
+    }
+    
 
         //Kullanıcılar
     

@@ -2,4 +2,5 @@
 2 musteri0 123 0
 3 musteri1 2121 0
 4 musteri2 112 0
-
+5 admin2 123 1
+6 add 123 0
